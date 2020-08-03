@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static '/login_signup/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static '/login_signup/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="logout">
+            {% if user.is_authenticated %}
+            <a type="button" href="/logout/" class=" btn btn-danger">Logout</a>
+            {% endif %}
+        </div>
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Show My Box</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            {%  csrf_token %}
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="min_length" placeholder="Enter Min Box Length"/>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="max_length" placeholder="Enter Max Box Length"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="min_width" placeholder="Enter Min Box width"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="max_width" placeholder="Enter Max Box Width"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="min_height" placeholder="Enter Min Box Height"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="max_height" placeholder="Enter Max Box Height"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="min_area" placeholder="Enter Min Box Area"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="max_area" placeholder="Enter Max Area"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="min_volume" placeholder="Enter Min volume"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="number" name="max_volume" placeholder="Enter Max Volume"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" placeholder="Enter Username"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="date" name="min_date" placeholder="Enter From Date"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="date" name="max_date" placeholder="Enter To Date"/>
+                            </div>
+
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Show My Box"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static '/login_signup/images/signup-image.jpg' %}" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="{% static '/login_signup/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/login_signup/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

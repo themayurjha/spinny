@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static '/login_signup/css/style.css' %}">
+  </head>
+
+  <body>
+    <br class="container-fluid">
+        <div class="logout">
+            {% if user.is_authenticated %}
+            <a type="button" href="/logout/" class=" btn btn-danger">Logout</a>
+            {% endif %}
+        </div>
+        {{message}}</br>
+        <a class="btn btn-success" href="add/">Add Box</a>
+        <a class="btn btn-danger" href="delete/">Delete Box</a>
+        <a class="btn btn-info" href="allbox/">Show All Boxes</a>
+        <a class="btn btn-warning" href="update/">Update Box</a>
+        <a class="btn btn-primary" href="mybox">Show Boxes By Me</a>
+
+    </div>
+  </body>
+</html>
